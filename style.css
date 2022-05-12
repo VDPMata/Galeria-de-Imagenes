@@ -5,23 +5,99 @@ html{
     font-size: 62.5%;
 }
 
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
 body{
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.62;
 }
 
 /*Galeria*/
 
 #galeria {
+    position: fixed;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 200px;
+    grid-gap: 2px;
+    max-width: 500px;
     min-width: 400px;
     padding: 0 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
 }
 
 #galeria img{
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#imgActiva{
     width: 100%;
     height: 100%;
+}
+
+/*Contenedor Principal*/
+
+#contenedorPrincipal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+#contenedorInterno{
+    width: 500px;
+    height: 500px;
+    border: 2px #f3f3f3 solid;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+
+/*botones*/
+
+button{
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color:#f3f3f3;
+}
+
+#btnCierra{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+}
+
+#btnRetrocede{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 3rem;
+}
+
+#btnAdelanta{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 3rem;
 }
